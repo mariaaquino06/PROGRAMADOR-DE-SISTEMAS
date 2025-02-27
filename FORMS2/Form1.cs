@@ -12,14 +12,17 @@ namespace FORMS2
             string usuario = CaixaTextUsuario.Text;
             string senha = CaixaTextSenha.Text;
 
-            if (usuario == null || usuario == "")
+            if (string.IsNullOrWhiteSpace(usuario))
             {
-                labelResultado.Text = "Usuario é obrigatório";
+                labelResultado.Text = "Usuario é obrigatório!";
                 labelResultado.ForeColor = Color.Red;
                 return;
-            }
-
-            if(usuario == "maria.eoaquino" && senha == "12345")
+            } else if (senha == null ||  senha == "")
+            {
+                labelResultado.Text = "Senha é Obrigatória";
+                labelResultado.ForeColor = Color.Red;
+            }          
+            else if(usuario == "maria.eoaquino" && senha == "12345")
             {
                 labelResultado.Text = "Autenticado com Sucesso"; 
                 labelResultado.ForeColor = Color.Green;

@@ -88,18 +88,22 @@
             // labelResultado
             // 
             labelResultado.AutoSize = true;
-            labelResultado.Location = new Point(35, 149);
+            labelResultado.BackColor = Color.White;
+            labelResultado.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelResultado.Location = new Point(12, 161);
             labelResultado.Name = "labelResultado";
-            labelResultado.Size = new Size(0, 15);
+            labelResultado.Size = new Size(16, 25);
             labelResultado.TabIndex = 6;
+            labelResultado.Text = ".";
             labelResultado.Click += label1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(325, 332);
+            BackColor = SystemColors.ButtonFace;
+            BackgroundImage = Properties.Resources.logo_senac;
+            ClientSize = new Size(1061, 256);
             Controls.Add(labelResultado);
             Controls.Add(labelSenha);
             Controls.Add(labelUsuario);
