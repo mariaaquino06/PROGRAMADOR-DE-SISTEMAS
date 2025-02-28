@@ -4,6 +4,7 @@ namespace FORMS2
     {
 
         List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.vittar", "sukuna.silva" };
+        List<string> ListaSenhas = new List<string>() { "bruna", "12345", "777" };
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace FORMS2
                 }
 
             }
-            if (usuarioBuscado == listaUsuarios[posicaousuarioEncontrado] && senha == "12345")
+            if (posicaousuarioEncontrado > -1 && senha == ListaSenhas[posicaousuarioEncontrado])
             {
                 labelResultado.Text = "Autenticado com Sucesso";
                 labelResultado.ForeColor = Color.Green;

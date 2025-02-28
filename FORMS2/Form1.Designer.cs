@@ -104,6 +104,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Sylfaen", 8.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(364, 212);
             label1.Name = "label1";
             label1.Size = new Size(261, 14);
