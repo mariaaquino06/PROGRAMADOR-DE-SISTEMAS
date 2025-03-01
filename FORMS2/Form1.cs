@@ -47,6 +47,49 @@ namespace FORMS2
 
 
         }
+
+        private void buttonNewCadastro_Click(object sender, EventArgs e)
+        {
+            string novoUsuario = textBoxUser.Text; 
+            string novaSenha = textBoxSenha.Text;
+            bool usuarioEncontrado = false;
+            
+            if (string.IsNullOrEmpty(novoUsuario))
+            {
+                labelResultado2.Text = "Usuário é obrigatório!!";
+                labelResultado2.ForeColor = Color.Red;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(novaSenha))
+            {
+                labelResultado2.Text = "Senha é Obrigatória";
+                labelResultado2.ForeColor = Color.Red;
+                return;
+            }
+            
+            for (int i = 0;i < listaUsuarios.Count;i++)
+            {
+                if (novoUsuario == listaUsuarios[i])
+                {
+                    usuarioEncontrado = true;
+                }
+            }
+
+            if (!usuarioEncontrado)
+            {
+               listaUsuarios.Add(novoUsuario);
+               ListaSenhas.Add(novaSenha);
+               labelResultado2.Text = "Usuário cadastrado com sucesso!";
+                labelResultado2.ForeColor = Color.Green;
+
+            }
+            else
+            {
+                labelResultado2.Text = "Já existe um usuário cadastrado";
+                labelResultado2.ForeColor = Color.Red;
+            }
+        }
     }
 
 }
