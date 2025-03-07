@@ -172,7 +172,7 @@
             labelResultado2.BackColor = Color.Transparent;
             labelResultado2.Font = new Font("Verdana", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             labelResultado2.ForeColor = SystemColors.ButtonHighlight;
-            labelResultado2.Location = new Point(594, 208);
+            labelResultado2.Location = new Point(568, 208);
             labelResultado2.Name = "labelResultado2";
             labelResultado2.Size = new Size(14, 18);
             labelResultado2.TabIndex = 14;

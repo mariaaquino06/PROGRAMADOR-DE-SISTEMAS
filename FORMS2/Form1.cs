@@ -1,3 +1,6 @@
+using System.Diagnostics.Eventing.Reader;
+using System.Text.RegularExpressions;
+
 namespace FORMS2
 {
     public partial class Form1 : Form
@@ -54,6 +57,7 @@ namespace FORMS2
             string novaSenha = textBoxSenha.Text;
             bool usuarioEncontrado = false;
             
+            
             if (string.IsNullOrEmpty(novoUsuario))
             {
                 labelResultado2.Text = "Usuário é obrigatório!!";
@@ -81,7 +85,7 @@ namespace FORMS2
                listaUsuarios.Add(novoUsuario);
                ListaSenhas.Add(novaSenha);
                labelResultado2.Text = "Usuário cadastrado com sucesso!";
-                labelResultado2.ForeColor = Color.Green;
+               labelResultado2.ForeColor = Color.Green;
 
             }
             else
@@ -89,7 +93,38 @@ namespace FORMS2
                 labelResultado2.Text = "Já existe um usuário cadastrado";
                 labelResultado2.ForeColor = Color.Red;
             }
-        }
+
+            if (!Regex.IsMatch(novaSenha, @"[0-9]"))
+            {
+                labelResultado2.Text = "A senha deve conter pelo menos 1 número.";
+                labelResultado2.ForeColor = Color.Red;
+            }
+            if (!Regex.IsMatch(novaSenha, @"[!@#$%^&*(),.?""{}|<>]"))
+            {
+                labelResultado2.Text = "A senha deve conter pelo menos 1 caractere especial.";
+                labelResultado2.ForeColor = Color.Red;
+            }
+            if (!Regex.IsMatch(novaSenha, @"[A-Z]"))
+            {
+                labelResultado2.Text = "A senha deve conter pelo menos 1 letra maiúscula.";
+                labelResultado2.ForeColor = Color.Red;
+            }
+            if (!Regex.IsMatch(novaSenha, @"[a-z]"))
+            {
+                labelResultado2.Text = "A senha deve conter pelo menos 1 letra minúscula.";
+                labelResultado2.ForeColor = Color.Red;
+            }
+            if (novaSenha.Contains(" "))
+            {
+                labelResultado2.Text = "A senha não pode conter espaços.";
+                labelResultado2.ForeColor = Color.Red;
+            }
+            
+                
+
+            
+
+        }   
     }
 
 }
