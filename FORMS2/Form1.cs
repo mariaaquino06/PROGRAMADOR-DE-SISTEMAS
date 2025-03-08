@@ -5,6 +5,10 @@ namespace FORMS2
 {
     public partial class Form1 : Form
     {
+        List<string> alfabetoMaiusculo = new List<string>() { "A", "B", "C", "D", "E" };
+        List<string> alfabetoMinusculo = new List<string>() { "a", "b", "c", "d", "e" };
+        List<char> numeros = new List<char>() { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+        List<char> especiais = new List<char>() { '!', '@', '#', '$', '%', '&', '*' };
 
         List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.vittar", "sukuna.silva" };
         List<string> ListaSenhas = new List<string>() { "bruna", "12345", "777" };
@@ -16,6 +20,7 @@ namespace FORMS2
         {
             string usuarioBuscado = CaixaTextUsuario.Text;
             string senha = CaixaTextSenha.Text;
+
             if (string.IsNullOrWhiteSpace(usuarioBuscado))
             {
                 labelResultado.Text = "Usuario é obrigatório!";
@@ -28,19 +33,15 @@ namespace FORMS2
                 labelResultado.ForeColor = Color.Red;
                 return;
             }
-            int posicaousuarioEncontrado = -1;
-            for (int i = 0; i < listaUsuarios.Count; i++)
-            {
-                if (usuarioBuscado == listaUsuarios[i])
-                {
-                    posicaousuarioEncontrado = i;
-                }
+            int posicaousuarioEncontrado = listaUsuarios.IndexOf(usuarioBuscado);
 
-            }
+            
             if (posicaousuarioEncontrado > -1 && senha == ListaSenhas[posicaousuarioEncontrado])
             {
                 labelResultado.Text = "Autenticado com Sucesso";
                 labelResultado.ForeColor = Color.Green;
+                textBoxUser.Clear();
+                textBoxSenha.Clear();
             }
             else
             {
@@ -55,7 +56,7 @@ namespace FORMS2
         {
             string novoUsuario = textBoxUser.Text; 
             string novaSenha = textBoxSenha.Text;
-            bool usuarioEncontrado = false;
+         
             
             
             if (string.IsNullOrEmpty(novoUsuario))
@@ -71,58 +72,67 @@ namespace FORMS2
                 labelResultado2.ForeColor = Color.Red;
                 return;
             }
-            
-            for (int i = 0;i < listaUsuarios.Count;i++)
+
+            if (novaSenha.Length < 8)
             {
-                if (novoUsuario == listaUsuarios[i])
-                {
-                    usuarioEncontrado = true;
-                }
+                labelResultado2.Text = "A senha deve ter pelo menos 8 caracteres";
+                labelResultado2.ForeColor = Color.Red;
+                return;
             }
 
-            if (!usuarioEncontrado)
+            if (!novaSenha.Any(char.IsUpper))
             {
-               listaUsuarios.Add(novoUsuario);
-               ListaSenhas.Add(novaSenha);
-               labelResultado2.Text = "Usuário cadastrado com sucesso!";
-               labelResultado2.ForeColor = Color.Green;
-
+                labelResultado2.Text = "A senha deve ter pelo menos uma letra maiuscula";
+                labelResultado2.ForeColor = Color.Red;
+                return;
             }
-            else
+
+            if (!novaSenha.Any(char.IsLower))
+            {
+                labelResultado2.Text = "A senha deve ter pelo menos uma letra minuscula";
+                labelResultado2.ForeColor = Color.Red;
+                return;
+            }
+
+            if (!novaSenha.Any(char.IsDigit))
+            {
+                labelResultado2.Text = "A senha deve ter pelo menos um numero";
+                labelResultado2.ForeColor = Color.Red;
+                return;
+            }
+
+            if (!novaSenha.Any(char.IsPunctuation) && !novaSenha.Any(char.IsSymbol) && !novaSenha.Contains("@"))
+            {
+                labelResultado2.Text = "A senha deve ter pelo menos um caracter especial";
+                labelResultado2.ForeColor = Color.Red;
+                return;
+            }
+
+            if (novaSenha.Contains(' '))
+            {
+                labelResultado2.Text = "A senha nao deve ter espacos em branco";
+                labelResultado2.ForeColor = Color.Red;
+                return;
+            }
+
+            if (listaUsuarios.Contains(novoUsuario))
             {
                 labelResultado2.Text = "Já existe um usuário cadastrado";
                 labelResultado2.ForeColor = Color.Red;
+                return;
             }
 
-            if (!Regex.IsMatch(novaSenha, @"[0-9]"))
-            {
-                labelResultado2.Text = "A senha deve conter pelo menos 1 número.";
-                labelResultado2.ForeColor = Color.Red;
-            }
-            if (!Regex.IsMatch(novaSenha, @"[!@#$%^&*(),.?""{}|<>]"))
-            {
-                labelResultado2.Text = "A senha deve conter pelo menos 1 caractere especial.";
-                labelResultado2.ForeColor = Color.Red;
-            }
-            if (!Regex.IsMatch(novaSenha, @"[A-Z]"))
-            {
-                labelResultado2.Text = "A senha deve conter pelo menos 1 letra maiúscula.";
-                labelResultado2.ForeColor = Color.Red;
-            }
-            if (!Regex.IsMatch(novaSenha, @"[a-z]"))
-            {
-                labelResultado2.Text = "A senha deve conter pelo menos 1 letra minúscula.";
-                labelResultado2.ForeColor = Color.Red;
-            }
-            if (novaSenha.Contains(" "))
-            {
-                labelResultado2.Text = "A senha não pode conter espaços.";
-                labelResultado2.ForeColor = Color.Red;
-            }
-            
-                
+            listaUsuarios.Add(novoUsuario);
+            ListaSenhas.Add(novaSenha);
+            labelResultado2.Text = "Usuário cadastrado com sucesso!";
+            labelResultado2.ForeColor = Color.Green;
+            textBoxUser.Clear();
+            textBoxSenha.Clear();
 
-            
+
+
+
+
 
         }   
     }
