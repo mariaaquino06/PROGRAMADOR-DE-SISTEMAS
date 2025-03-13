@@ -5,25 +5,13 @@ namespace FORMS2
 {
     public partial class Form1 : Form
     {
-        List<string> alfabetoMaiusculo = new List<string>() { "A", "B", "C", "D", "E" };
-        List<string> alfabetoMinusculo = new List<string>() { "a", "b", "c", "d", "e" };
-        List<char> numeros = new List<char>() { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-        List<char> especiais = new List<char>() { '!', '@', '#', '$', '%', '&', '*' };
-        List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.vittar", "sukuna.silva" };
-        List<string> ListaSenhas = new List<string>() { "Brun@123", "12345Abc!", "Sete7Sete!" };
-
-        Usuario neymar = new Usuario() { Email = "neymar.jr@email.com", Senha = "Brun@123" };
-        Usuario pablo = new Usuario() { Email = "pablo.vittar@email.com", Senha = "12345Abc!" };
-        Usuario sukuna = new Usuario() { Email = "sukuna.silva@email.com", Senha = "Sete7Sete!" };
-
-        List<Usuario> usuarios = new List<Usuario>(); 
-       
+        List<Usuario> usuarios = new List<Usuario>();
         public Form1()
         {
             InitializeComponent();
-            usuarios.Add(neymar);
-            usuarios.Add(pablo);
-            usuarios.Add(sukuna);
+            usuarios.Add(new Usuario() { text = "neymar.jr@email.com", Senha = "Brun@123" });
+            usuarios.Add(new Usuario() { Email = "pablo.vitar@email.com", Senha = "12345Abc!" });
+            usuarios.Add(new Usuario() { Email = "sukuna.silva@email.com", Senha = "Sete7Sete!" });
         }
         private void ButtonEntrar_Click(object sender, EventArgs e)
         {
