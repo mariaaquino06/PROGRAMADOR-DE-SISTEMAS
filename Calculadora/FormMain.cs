@@ -1,5 +1,3 @@
-using System.Drawing.Text;
-
 namespace Calculadora
 {
     public partial class FormMain : Form
@@ -112,133 +110,25 @@ namespace Calculadora
 
         private void radioButtonSubtracao_CheckedChanged(object sender, EventArgs e)
         {
-
             labelOperacao.Text = "-";
         }
 
         private void radioButtonMultiplicacao_CheckedChanged(object sender, EventArgs e)
         {
-
             labelOperacao.Text = "*";
         }
 
         private void radioButtonDivisao_CheckedChanged(object sender, EventArgs e)
         {
-
             labelOperacao.Text = "/";
         }
 
-        private void LimparTextBox2()
+        private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            textBox2.Clear();
-        }
+            NovoForm novoForm = new NovoForm();
+            novoForm.Show();
 
-        private bool ValidarForm2()
-        {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
-            {
-                labelErro2.Text = "O valor 1 eh obrigatorio.";
-                textBox1.Focus();
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                labelErro2.Text = "O valor 2 eh obrigatorio.";
-                textBox2.Focus();
-                return false;
-            }
-
-            try
-            {
-                double doubleValor3 = Convert.ToDouble(textBox1.Text);
-                double doubleValor4 = Convert.ToDouble(textBox2.Text);
-
-                return true;
-            }
-            catch
-            {
-                labelErro2.Text = "Insira somente numeros";
-                LimparTextBox();
-                textBox1.Focus();
-                return false;
-            }
-        }
-
-        private static double Somar2(double val3, double val4)
-        {
-            return val3 + val4;
-        }
-
-        private static double Subtrair2(double val3, double val4)
-        {
-            return val3 - val4;
-        }
-
-        private static double Multiplicar2(double val3, double val4)
-        {
-            return val3 * val4;
-        }
-        private static double Dividir2(double val3, double val4)
-        {
-            return val3 / val4;
-        }
-
-        private void buttonCalcular2_Click(object sender, EventArgs e)
-        {
-            textBoxResultado2.Clear();
-            labelErro2.Text = "";
-
-            if (!ValidarForm())
-            {
-                return;
-            }
-
-            double doubleValor3 = Convert.ToDouble(textBox1.Text);
-            double doubleValor4 = Convert.ToDouble(textBox2.Text);
-            double resultado;
-
-            switch (comboBox1.Text)
-            {
-                case "+":
-                    resultado = Somar(doubleValor3, doubleValor4);
-                    break;
-                case "-":
-                    resultado = Subtrair(doubleValor3, doubleValor4);
-                    break;
-                case "*":
-                    resultado = Multiplicar(doubleValor3, doubleValor4);
-                    break;
-                case "/":
-                    resultado = Dividir(doubleValor3, doubleValor4);
-                    break;
-                default:
-                    resultado = Somar(doubleValor3, doubleValor4);
-                    break;
-            }
-        }
-
-        private void buttonNovaCalculadora_Click(object sender, EventArgs e)
-        {
-          
-
-       
+            this.Hide();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

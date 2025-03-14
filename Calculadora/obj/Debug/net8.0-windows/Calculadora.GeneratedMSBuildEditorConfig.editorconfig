@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Calculadora
-build_property.ProjectDir = D:\Programador_dSistemas\PROGRAMADOR-DE-SISTEMAS\Calculadora\
+build_property.ProjectDir = D:\senac-programador-sistemas\Calculadora\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

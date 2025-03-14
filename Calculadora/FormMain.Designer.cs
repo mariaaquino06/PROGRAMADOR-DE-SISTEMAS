@@ -39,15 +39,7 @@
             radioButtonSubtracao = new RadioButton();
             radioButtonMultiplicacao = new RadioButton();
             radioButtonDivisao = new RadioButton();
-            labelIgual = new Label();
-            labelOperador = new Label();
-            buttonCalcular2 = new Button();
-            textBoxResultado2 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            labelErro2 = new Label();
-            buttonNovaCalculadora = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // textBoxNro1
@@ -56,6 +48,7 @@
             textBoxNro1.Name = "textBoxNro1";
             textBoxNro1.Size = new Size(50, 23);
             textBoxNro1.TabIndex = 0;
+            textBoxNro1.Visible = false;
             // 
             // textBoxNro2
             // 
@@ -159,98 +152,22 @@
             radioButtonDivisao.UseVisualStyleBackColor = true;
             radioButtonDivisao.CheckedChanged += radioButtonDivisao_CheckedChanged;
             // 
-            // labelIgual
+            // button1
             // 
-            labelIgual.AutoSize = true;
-            labelIgual.Location = new Point(575, 53);
-            labelIgual.Name = "labelIgual";
-            labelIgual.Size = new Size(15, 15);
-            labelIgual.TabIndex = 17;
-            labelIgual.Text = "=";
-            // 
-            // labelOperador
-            // 
-            labelOperador.AutoSize = true;
-            labelOperador.Location = new Point(498, 53);
-            labelOperador.Name = "labelOperador";
-            labelOperador.Size = new Size(15, 15);
-            labelOperador.TabIndex = 16;
-            labelOperador.Text = "+";
-            // 
-            // buttonCalcular2
-            // 
-            buttonCalcular2.Location = new Point(485, 13);
-            buttonCalcular2.Name = "buttonCalcular2";
-            buttonCalcular2.Size = new Size(75, 23);
-            buttonCalcular2.TabIndex = 15;
-            buttonCalcular2.Text = "Calcular";
-            buttonCalcular2.UseVisualStyleBackColor = true;
-            // 
-            // textBoxResultado2
-            // 
-            textBoxResultado2.Enabled = false;
-            textBoxResultado2.Location = new Point(596, 50);
-            textBoxResultado2.Name = "textBoxResultado2";
-            textBoxResultado2.ReadOnly = true;
-            textBoxResultado2.Size = new Size(50, 23);
-            textBoxResultado2.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(519, 50);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(50, 23);
-            textBox2.TabIndex = 13;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(442, 50);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(50, 23);
-            textBox1.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "+", "-", "*", "/" });
-            comboBox1.Location = new Point(469, 100);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 18;
-            // 
-            // labelErro2
-            // 
-            labelErro2.AutoSize = true;
-            labelErro2.Location = new Point(511, 184);
-            labelErro2.Name = "labelErro2";
-            labelErro2.Size = new Size(10, 15);
-            labelErro2.TabIndex = 19;
-            labelErro2.Text = ".";
-            // 
-            // buttonNovaCalculadora
-            // 
-            buttonNovaCalculadora.Location = new Point(290, 320);
-            buttonNovaCalculadora.Name = "buttonNovaCalculadora";
-            buttonNovaCalculadora.Size = new Size(138, 43);
-            buttonNovaCalculadora.TabIndex = 20;
-            buttonNovaCalculadora.Text = "Nova Calculadora";
-            buttonNovaCalculadora.UseVisualStyleBackColor = true;
-            buttonNovaCalculadora.Click += buttonNovaCalculadora_Click;
+            button1.Location = new Point(553, 102);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 11;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
-            Controls.Add(buttonNovaCalculadora);
-            Controls.Add(labelErro2);
-            Controls.Add(comboBox1);
-            Controls.Add(labelIgual);
-            Controls.Add(labelOperador);
-            Controls.Add(buttonCalcular2);
-            Controls.Add(textBoxResultado2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(button1);
             Controls.Add(radioButtonDivisao);
             Controls.Add(radioButtonMultiplicacao);
             Controls.Add(radioButtonSubtracao);
@@ -283,15 +200,6 @@
         private RadioButton radioButtonSubtracao;
         private RadioButton radioButtonMultiplicacao;
         private RadioButton radioButtonDivisao;
-        private Button buttonNovaJanela;
-        private Label labelIgual;
-        private Label labelOperador;
-        private Button buttonCalcular2;
-        private TextBox textBoxResultado2;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
-        private Label labelErro2;
-        private Button buttonNovaCalculadora;
+        private Button button1;
     }
 }
