@@ -52,7 +52,6 @@
             label1 = new Label();
             labelLado = new Label();
             textBoxLado = new TextBox();
-            buttonCirculo = new Button();
             groupBoxRetangulo.SuspendLayout();
             groupBoxQuadrado.SuspendLayout();
             SuspendLayout();
@@ -302,22 +301,11 @@
             textBoxLado.Size = new Size(100, 23);
             textBoxLado.TabIndex = 0;
             // 
-            // buttonCirculo
-            // 
-            buttonCirculo.Location = new Point(612, 175);
-            buttonCirculo.Name = "buttonCirculo";
-            buttonCirculo.Size = new Size(100, 46);
-            buttonCirculo.TabIndex = 13;
-            buttonCirculo.Text = "Calculadora Círculo";
-            buttonCirculo.UseVisualStyleBackColor = true;
-            buttonCirculo.Click += buttonCirculo_Click;
-            // 
             // NovoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(buttonCirculo);
             Controls.Add(groupBoxQuadrado);
             Controls.Add(labelErro);
             Controls.Add(comboBoxOpcao);
@@ -361,6 +349,5 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBoxLado;
-        private Button buttonCirculo;
     }
 }

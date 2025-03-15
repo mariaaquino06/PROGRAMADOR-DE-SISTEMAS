@@ -137,7 +137,7 @@
             if (radioButton3.Checked)
             {
                 string lado = textBoxLado.Text;
-
+                
 
                 if (string.IsNullOrWhiteSpace(lado) || !lado.All(char.IsNumber))
                 {
@@ -160,7 +160,7 @@
             if (radioButton2.Checked)
             {
                 string lado = textBoxLado.Text;
-
+                
 
                 if (string.IsNullOrWhiteSpace(lado) || !lado.All(char.IsNumber))
                 {
@@ -183,7 +183,7 @@
             if (radioButton1.Checked)
             {
                 string lado = textBoxLado.Text;
-
+                
 
                 if (string.IsNullOrWhiteSpace(lado) || !lado.All(char.IsNumber))
                 {
@@ -208,18 +208,6 @@
                 textBoxResultado2.Text = resultado.ToString();
                 return;
             }
-
-
-        }
-
-        private void buttonCirculo_Click(object sender, EventArgs e)
-        {
-            Circulo novoForm2 = new Circulo();
-            novoForm2.Show();
-
-            this.Hide();
-
-
         }
     }
 }

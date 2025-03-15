@@ -28,9 +28,9 @@ D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.G
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.AssemblyInfoInputs.cache
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.AssemblyInfo.cs
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.csproj.CoreCompileInputs.cache
+D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.sourcelink.json
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.dll
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\refint\Calculadora.dll
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.pdb
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.genruntimeconfig.cache
 D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\ref\Calculadora.dll
-D:\senac-programador-sistemas\Calculadora\obj\Debug\net8.0-windows\Calculadora.Circulo.resources
