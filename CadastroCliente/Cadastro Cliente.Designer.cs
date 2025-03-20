@@ -339,9 +339,9 @@
             labelCidade.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelCidade.Location = new Point(424, 358);
             labelCidade.Name = "labelCidade";
-            labelCidade.Size = new Size(47, 15);
+            labelCidade.Size = new Size(64, 15);
             labelCidade.TabIndex = 27;
-            labelCidade.Text = "Cidade:";
+            labelCidade.Text = "Município:";
             // 
             // textBoxNCasa
             // 
