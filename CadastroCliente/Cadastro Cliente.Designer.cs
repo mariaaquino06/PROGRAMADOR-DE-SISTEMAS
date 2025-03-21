@@ -420,7 +420,7 @@
             // 
             labelErro1.AutoSize = true;
             labelErro1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelErro1.Location = new Point(17, 615);
+            labelErro1.Location = new Point(15, 603);
             labelErro1.Name = "labelErro1";
             labelErro1.Size = new Size(12, 17);
             labelErro1.TabIndex = 37;
@@ -430,7 +430,7 @@
             // 
             labelErro2.AutoSize = true;
             labelErro2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelErro2.Location = new Point(424, 514);
+            labelErro2.Location = new Point(420, 516);
             labelErro2.Name = "labelErro2";
             labelErro2.Size = new Size(12, 17);
             labelErro2.TabIndex = 38;
@@ -440,7 +440,7 @@
             // 
             buttonCadastrar.BackColor = Color.LightGray;
             buttonCadastrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonCadastrar.Location = new Point(735, 313);
+            buttonCadastrar.Location = new Point(424, 579);
             buttonCadastrar.Name = "buttonCadastrar";
             buttonCadastrar.Size = new Size(106, 41);
             buttonCadastrar.TabIndex = 39;
@@ -465,11 +465,11 @@
             dataGridViewCliente.AllowUserToOrderColumns = true;
             dataGridViewCliente.AllowUserToResizeRows = false;
             dataGridViewCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCliente.Location = new Point(964, 167);
+            dataGridViewCliente.Location = new Point(941, 168);
             dataGridViewCliente.MultiSelect = false;
             dataGridViewCliente.Name = "dataGridViewCliente";
             dataGridViewCliente.ReadOnly = true;
-            dataGridViewCliente.Size = new Size(461, 269);
+            dataGridViewCliente.Size = new Size(520, 269);
             dataGridViewCliente.TabIndex = 3;
             // 
             // Form1

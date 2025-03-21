@@ -8,7 +8,7 @@ namespace CadastroCliente
         public Form1()
         {
             InitializeComponent();
-
+            //primeira lista de clientes
             EnderecoCliente enderecoRayane = new EnderecoCliente() { logradouro = "Rua Brasil", numero = "1443", complemento = "Casa 02", bairro = "Jd. das Rosas", cidade = "São Pedro", estado = "SP", cep = "04899-002" };
             Cliente rayane = new Cliente() { id = 1, Nome = "Rayane Lima", datNasc = "26/05/2004", email = "ray.ane@email.com", telefone = "11 940028922", endereco = enderecoRayane, nomeSocial = "não se aplica", estrangeiro = false, genero = GeneroCliente.Feminino, etnia = EtniaCliente.Preto, tipo = TipoCliente.PF };
             clientes.Add(rayane);
@@ -47,7 +47,7 @@ namespace CadastroCliente
                 return;
             }
 
-            //Campo Nome Completo
+            //Validacao Campo Nome Completo
             if (string.IsNullOrEmpty(textBoxNome.Text))
             {
                 labelErro1.Text = "O campo 'Nome Completo' é obrigatório!";
@@ -60,7 +60,7 @@ namespace CadastroCliente
                 labelErro1.ForeColor = Color.Red;
                 return;
             }
-            //Campo Data de Nascimento
+            //Validacao Validacao Campo Data de Nascimento
             if (maskedTxtBoxNasc.Text == "  /  /" || DataNascCliente.Length < 10)
             {
                 labelErro1.Text = "O Campo 'Data de Nascimento' é obrigatório";
@@ -74,7 +74,7 @@ namespace CadastroCliente
                 labelErro1.ForeColor = Color.Red;
                 return;
             }
-            //Campo email
+            //Validacao Campo email
             if (string.IsNullOrEmpty(textBoxEmail.Text))
             {
                 labelErro1.Text = "O Campo 'Email' é obrigatório";
@@ -87,29 +87,29 @@ namespace CadastroCliente
                 labelErro1.ForeColor = Color.Red;
                 return;
             }
-            //Campo genero
+            //Validacao Campo genero
             if (string.IsNullOrEmpty(comboBoxGenero.Text))
             {
                 labelErro1.Text = "O Campo 'Gênero' é obrigatório";
                 labelErro1.ForeColor = Color.Red;
                 return;
             }
-          
-            //Campo etnia
+
+            //Validacao Campo etnia
             if (string.IsNullOrEmpty(comboBoxEtnia.Text))
             {
                 labelErro1.Text = "O Campo 'Etnia' é obrigatório";
                 labelErro1.ForeColor = Color.Red;
                 return;
             }
-            //Tipo de Cliente
+            //Validacao Tipo de Cliente
             if (!radioButtonPF.Checked && !radioButtonPJ.Checked)
             {
                 labelErro1.Text = "Selecione algum Tipo!!!";
                 labelErro1.ForeColor = Color.Red;
                 return;
             }
-            //Logradouro
+            //Validacao Logradouro
             if (string.IsNullOrWhiteSpace(logradouroCliente))
             {
                 labelErro2.Text = "O Logradouro é obrigatorio!!!";
@@ -117,7 +117,7 @@ namespace CadastroCliente
                 return;
             }
 
-            //Numero
+            //Validacao Numero
             if (string.IsNullOrWhiteSpace(numeroEnderecoCliente))
             {
                 labelErro2.Text = "O Numero é obrigatorio!!!";
@@ -131,7 +131,7 @@ namespace CadastroCliente
                 return;
             }
 
-            //Bairro
+            //Validacao Bairro
             if (string.IsNullOrWhiteSpace(bairroCliente))
             {
                 labelErro2.Text = "O Bairro é obrigatorio!!!";
@@ -145,7 +145,7 @@ namespace CadastroCliente
                 return;
             }
 
-            //Municipio
+            //Validacao Municipio
             if (string.IsNullOrWhiteSpace(municipioCliente))
             {
                 labelErro2.Text = "O Município é obrigatorio!!!";
@@ -159,7 +159,7 @@ namespace CadastroCliente
                 return;
             }
 
-            //Estados
+            //Validacao Estados
             if (comboBoxEstado.SelectedItem == null)
             {
                 labelErro2.Text = "Selecione algum Estado!!!";
@@ -167,7 +167,7 @@ namespace CadastroCliente
                 return;
             }
 
-            //CEP
+            //Validacao CEP
             if (cepCliente == "     -" || cepCliente.Length < 9)
             {
                 labelErro2.Text = "O CEP é obrigatorio!!!";
@@ -175,7 +175,7 @@ namespace CadastroCliente
                 return;
             }
             
-            
+            //Validacao p n ter cliente duplicado
             int ClienteCadastrado = -1;
 
             for (int i = 0; i < clientes.Count; i++)
@@ -196,8 +196,8 @@ namespace CadastroCliente
                 labelErro2.ForeColor = Color.Green;
             }
 
+            //Add cliente comboBoxGenero
             GeneroCliente generoCliente; 
-
             switch(comboBoxGenero.SelectedIndex)
             {
                 case 0:
@@ -223,6 +223,7 @@ namespace CadastroCliente
                         
             }
 
+            //Add cliente novo comboBox Etnia
             EtniaCliente etnia;
             switch (comboBoxEtnia.SelectedIndex)
             {
@@ -251,6 +252,7 @@ namespace CadastroCliente
                 break;
             }
 
+            //Add cliente radioButtonTipo
             TipoCliente tipoCliente;
             if (radioButtonPF.Checked)
             {
@@ -281,7 +283,7 @@ namespace CadastroCliente
                 labelErro2.ForeColor = Color.Green;
                 BindingSource.ResetBindings(false);
             }
-
+            //Adicionar novo cliente^
            
         }
     
