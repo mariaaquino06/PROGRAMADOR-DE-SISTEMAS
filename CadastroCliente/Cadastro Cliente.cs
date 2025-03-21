@@ -196,6 +196,10 @@ namespace CadastroCliente
                 labelErro2.ForeColor = Color.Green;
             }
 
+            EnderecoCliente enderecoNovoCliente = new EnderecoCliente() { logradouro = textBoxLogradouro.Text, numero = textBoxNCasa.Text, complemento = textBoxComplemento.Text, bairro = textBoxBairro.Text, cidade = textBoxCidade.Text, estado = comboBoxEstado.Text, cep = maskedTxtBoxCEP.Text};
+            clientes.Add(new Cliente() { Nome = textBoxNome.Text, datNasc = maskedTxtBoxNasc.Text, email = textBoxEmail.Text, telefone = maskedTxtBoxTelefone.Text, nomeSocial = textBoxNomeSocial.Text, estrangeiro = checkBoxNacionalidade.Checked});
+            
+            
             BindingSource.ResetBindings(false);
         }
     
