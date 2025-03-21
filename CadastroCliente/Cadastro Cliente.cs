@@ -196,11 +196,93 @@ namespace CadastroCliente
                 labelErro2.ForeColor = Color.Green;
             }
 
-            EnderecoCliente enderecoNovoCliente = new EnderecoCliente() { logradouro = textBoxLogradouro.Text, numero = textBoxNCasa.Text, complemento = textBoxComplemento.Text, bairro = textBoxBairro.Text, cidade = textBoxCidade.Text, estado = comboBoxEstado.Text, cep = maskedTxtBoxCEP.Text};
-            clientes.Add(new Cliente() { Nome = textBoxNome.Text, datNasc = maskedTxtBoxNasc.Text, email = textBoxEmail.Text, telefone = maskedTxtBoxTelefone.Text, nomeSocial = textBoxNomeSocial.Text, estrangeiro = checkBoxNacionalidade.Checked});
-            
-            
-            BindingSource.ResetBindings(false);
+            GeneroCliente generoCliente; 
+
+            switch(comboBoxGenero.SelectedIndex)
+            {
+                case 0:
+                generoCliente = GeneroCliente.Feminino;
+                break;
+
+                case 1:
+                generoCliente = GeneroCliente.Masculino;
+                break;
+
+                case 2:
+                generoCliente = GeneroCliente.Trans;
+                break;
+
+                case 3:
+                generoCliente = GeneroCliente.NaoBinario;
+                break;
+
+                default:
+                generoCliente = GeneroCliente.Outros;
+                break;
+
+                        
+            }
+
+            EtniaCliente etnia;
+            switch (comboBoxEtnia.SelectedIndex)
+            {
+                case 0:
+                etnia = EtniaCliente.Branco;
+                break;
+
+                case 1:
+                etnia = EtniaCliente.Indigena;
+                break;
+
+                case 2:
+                etnia = EtniaCliente.Pardo;
+                break;
+
+                case 3:
+                etnia = EtniaCliente.Preto;
+                break;
+
+                case 4:
+                etnia = EtniaCliente.Amarelo;
+                break;
+
+                default:
+                etnia = EtniaCliente.Outros;
+                break;
+            }
+
+            TipoCliente tipoCliente;
+            if (radioButtonPF.Checked)
+            {
+                tipoCliente = TipoCliente.PF;
+            }
+            else
+            {
+                tipoCliente= TipoCliente.PJ;
+            }
+
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                if (emailCliente == clientes[i].email || telefoneCliente == clientes[i].telefone)
+                {
+                    ClienteCadastrado = i;
+                }
+            }
+            if (ClienteCadastrado > -1)
+            {
+                labelErro2.Text = "Já existe um cliente cadastrado com esse e-mail e n° de telefone";
+                labelErro2.ForeColor = Color.Red;
+            }
+            else
+            {
+                EnderecoCliente enderecoNovoCliente = new EnderecoCliente() { logradouro = textBoxLogradouro.Text, numero = textBoxNCasa.Text, complemento = textBoxComplemento.Text, bairro = textBoxBairro.Text, cidade = textBoxCidade.Text, estado = comboBoxEstado.Text, cep = maskedTxtBoxCEP.Text };
+                clientes.Add(new Cliente() { id = clientes.ElementAt(clientes.Count - 1).id + 1, Nome = textBoxNome.Text, datNasc = maskedTxtBoxNasc.Text, email = textBoxEmail.Text, telefone = maskedTxtBoxTelefone.Text, genero = generoCliente, nomeSocial = textBoxNomeSocial.Text, etnia = etnia, estrangeiro = checkBoxNacionalidade.Checked, tipo = tipoCliente });
+                labelErro2.Text = "Cliente Cadastrado com Sucesso!";
+                labelErro2.ForeColor = Color.Green;
+                BindingSource.ResetBindings(false);
+            }
+
+           
         }
     
     
