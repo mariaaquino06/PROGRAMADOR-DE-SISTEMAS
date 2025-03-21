@@ -3,6 +3,7 @@ namespace CadastroCliente
     public partial class Form1 : Form
     {
         List<Cliente> clientes = new List<Cliente>();
+        private readonly BindingSource BindingSource = [];
 
         public Form1()
         {
@@ -19,6 +20,9 @@ namespace CadastroCliente
             EnderecoCliente enderecoViviane = new EnderecoCliente() { logradouro = "Avenida Luiz Gushiken", numero = "1550", complemento = "Apto81", bairro = "Jd. São Luis", cidade = "São Paulo", estado = "SP", cep = "05923-111" };
             Cliente viviane = new Cliente() { id = 3, Nome = "Viviane Oliveira", datNasc = "18/03/1985", email = "vivi.oli@email.com", telefone = "11 980903357", endereco = enderecoViviane, nomeSocial = "não se aplica", estrangeiro = false, genero = GeneroCliente.Feminino, etnia = EtniaCliente.Pardo, tipo = TipoCliente.PF };
             clientes.Add(viviane);
+
+            BindingSource.DataSource = clientes;
+            dataGridViewCliente.DataSource = BindingSource;
         }
         public bool LimparErro()
         {
@@ -183,7 +187,7 @@ namespace CadastroCliente
             }
             if (ClienteCadastrado > -1)
             {
-                labelErro2.Text = "Cliente já cadastrado!";
+                labelErro2.Text = "Já existe um cliente cadastrado com esse e-mail e n° de telefone";
                 labelErro2.ForeColor = Color.Red;
             }
             else
@@ -191,6 +195,8 @@ namespace CadastroCliente
                 labelErro2.Text = "Cliente Cadastrado com Sucesso!";
                 labelErro2.ForeColor = Color.Green;
             }
+
+            BindingSource.ResetBindings(false);
         }
     
     

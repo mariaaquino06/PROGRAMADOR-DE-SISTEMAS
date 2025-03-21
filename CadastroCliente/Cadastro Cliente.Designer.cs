@@ -69,7 +69,9 @@
             labelErro2 = new Label();
             buttonCadastrar = new Button();
             pictureBox1 = new PictureBox();
+            dataGridViewCliente = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCliente).BeginInit();
             SuspendLayout();
             // 
             // labelCadastrese
@@ -456,12 +458,27 @@
             pictureBox1.TabIndex = 40;
             pictureBox1.TabStop = false;
             // 
+            // dataGridViewCliente
+            // 
+            dataGridViewCliente.AllowUserToAddRows = false;
+            dataGridViewCliente.AllowUserToDeleteRows = false;
+            dataGridViewCliente.AllowUserToOrderColumns = true;
+            dataGridViewCliente.AllowUserToResizeRows = false;
+            dataGridViewCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCliente.Location = new Point(964, 167);
+            dataGridViewCliente.MultiSelect = false;
+            dataGridViewCliente.Name = "dataGridViewCliente";
+            dataGridViewCliente.ReadOnly = true;
+            dataGridViewCliente.Size = new Size(461, 269);
+            dataGridViewCliente.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(909, 664);
+            ClientSize = new Size(1531, 664);
+            Controls.Add(dataGridViewCliente);
             Controls.Add(pictureBox1);
             Controls.Add(buttonCadastrar);
             Controls.Add(labelErro2);
@@ -506,6 +523,7 @@
             Name = "Form1";
             Text = "Cadastro Cliente";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCliente).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -553,5 +571,6 @@
         private Label labelErro2;
         private Button buttonCadastrar;
         private PictureBox pictureBox1;
+        private DataGridView dataGridViewCliente;
     }
 }
