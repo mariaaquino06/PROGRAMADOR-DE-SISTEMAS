@@ -465,11 +465,11 @@
             dataGridViewCliente.AllowUserToOrderColumns = true;
             dataGridViewCliente.AllowUserToResizeRows = false;
             dataGridViewCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCliente.Location = new Point(941, 168);
+            dataGridViewCliente.Location = new Point(687, 133);
             dataGridViewCliente.MultiSelect = false;
             dataGridViewCliente.Name = "dataGridViewCliente";
             dataGridViewCliente.ReadOnly = true;
-            dataGridViewCliente.Size = new Size(520, 269);
+            dataGridViewCliente.Size = new Size(629, 457);
             dataGridViewCliente.TabIndex = 3;
             // 
             // Form1

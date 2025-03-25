@@ -14,7 +14,7 @@ namespace CadastroCliente
             clientes.Add(rayane);
 
             EnderecoCliente enderecoMariaEduarda = new EnderecoCliente() { logradouro = "Rua Amador Bueno", numero = "89", complemento = "não se aplica", bairro = "Águia Branca", cidade = "São Paulo", estado = "SP", cep = "05831-000" };
-            Cliente mariaEduarda = new Cliente() { id = 2, Nome = "Maria Eduarda", datNasc = "02/10/2006", email = "maria.aquino@email.com", telefone = "11 977737250", endereco = enderecoMariaEduarda, nomeSocial = "não se aplica", estrangeiro = true, genero = GeneroCliente.Feminino, etnia = EtniaCliente.Branco, tipo = TipoCliente.PJ };
+            Cliente mariaEduarda = new Cliente() { id = 2, Nome = "Maria Eduarda", datNasc = "02/10/2006", email = "maria.aquino@email.com", telefone = "11 977737250", nomeSocial = "não se aplica", estrangeiro = true, genero = GeneroCliente.Feminino, etnia = EtniaCliente.Branco, tipo = TipoCliente.PJ, endereco = enderecoMariaEduarda };
             clientes.Add(mariaEduarda);
 
             EnderecoCliente enderecoViviane = new EnderecoCliente() { logradouro = "Avenida Luiz Gushiken", numero = "1550", complemento = "Apto81", bairro = "Jd. São Luis", cidade = "São Paulo", estado = "SP", cep = "05923-111" };
@@ -29,7 +29,7 @@ namespace CadastroCliente
             labelErro1.Text = "";
             return true;
         }
-          
+
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             string nomeCliente = textBoxNome.Text;
@@ -174,7 +174,7 @@ namespace CadastroCliente
                 labelErro2.ForeColor = Color.Red;
                 return;
             }
-            
+
             //Validacao p n ter cliente duplicado
             int ClienteCadastrado = -1;
 
@@ -197,30 +197,30 @@ namespace CadastroCliente
             }
 
             //Add cliente comboBoxGenero
-            GeneroCliente generoCliente; 
-            switch(comboBoxGenero.SelectedIndex)
+            GeneroCliente generoCliente;
+            switch (comboBoxGenero.SelectedIndex)
             {
                 case 0:
-                generoCliente = GeneroCliente.Feminino;
-                break;
+                    generoCliente = GeneroCliente.Feminino;
+                    break;
 
                 case 1:
-                generoCliente = GeneroCliente.Masculino;
-                break;
+                    generoCliente = GeneroCliente.Masculino;
+                    break;
 
                 case 2:
-                generoCliente = GeneroCliente.Trans;
-                break;
+                    generoCliente = GeneroCliente.Trans;
+                    break;
 
                 case 3:
-                generoCliente = GeneroCliente.NaoBinario;
-                break;
+                    generoCliente = GeneroCliente.NaoBinario;
+                    break;
 
                 default:
-                generoCliente = GeneroCliente.Outros;
-                break;
+                    generoCliente = GeneroCliente.Outros;
+                    break;
 
-                        
+
             }
 
             //Add cliente novo comboBox Etnia
@@ -228,28 +228,28 @@ namespace CadastroCliente
             switch (comboBoxEtnia.SelectedIndex)
             {
                 case 0:
-                etnia = EtniaCliente.Branco;
-                break;
+                    etnia = EtniaCliente.Branco;
+                    break;
 
                 case 1:
-                etnia = EtniaCliente.Indigena;
-                break;
+                    etnia = EtniaCliente.Indigena;
+                    break;
 
                 case 2:
-                etnia = EtniaCliente.Pardo;
-                break;
+                    etnia = EtniaCliente.Pardo;
+                    break;
 
                 case 3:
-                etnia = EtniaCliente.Preto;
-                break;
+                    etnia = EtniaCliente.Preto;
+                    break;
 
                 case 4:
-                etnia = EtniaCliente.Amarelo;
-                break;
+                    etnia = EtniaCliente.Amarelo;
+                    break;
 
                 default:
-                etnia = EtniaCliente.Outros;
-                break;
+                    etnia = EtniaCliente.Outros;
+                    break;
             }
 
             //Add cliente radioButtonTipo
@@ -260,7 +260,7 @@ namespace CadastroCliente
             }
             else
             {
-                tipoCliente= TipoCliente.PJ;
+                tipoCliente = TipoCliente.PJ;
             }
 
             for (int i = 0; i < clientes.Count; i++)
@@ -278,16 +278,15 @@ namespace CadastroCliente
             else
             {
                 EnderecoCliente enderecoNovoCliente = new EnderecoCliente() { logradouro = textBoxLogradouro.Text, numero = textBoxNCasa.Text, complemento = textBoxComplemento.Text, bairro = textBoxBairro.Text, cidade = textBoxCidade.Text, estado = comboBoxEstado.Text, cep = maskedTxtBoxCEP.Text };
-                clientes.Add(new Cliente() { id = clientes.ElementAt(clientes.Count - 1).id + 1, Nome = textBoxNome.Text, datNasc = maskedTxtBoxNasc.Text, email = textBoxEmail.Text, telefone = maskedTxtBoxTelefone.Text, genero = generoCliente, nomeSocial = textBoxNomeSocial.Text, etnia = etnia, estrangeiro = checkBoxNacionalidade.Checked, tipo = tipoCliente });
+                clientes.Add(new Cliente() { id = clientes.ElementAt(clientes.Count - 1).id + 1, Nome = textBoxNome.Text, datNasc = maskedTxtBoxNasc.Text, email = textBoxEmail.Text, telefone = maskedTxtBoxTelefone.Text, genero = generoCliente, nomeSocial = textBoxNomeSocial.Text, etnia = etnia, estrangeiro = checkBoxNacionalidade.Checked, tipo = tipoCliente, endereco = enderecoNovoCliente });
                 labelErro2.Text = "Cliente Cadastrado com Sucesso!";
                 labelErro2.ForeColor = Color.Green;
                 BindingSource.ResetBindings(false);
             }
             //Adicionar novo cliente^
-           
+
         }
-    
-    
-    
+
+       
     }
 }
