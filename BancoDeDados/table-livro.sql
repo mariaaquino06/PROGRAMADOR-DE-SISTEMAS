@@ -228,4 +228,4 @@ where autor = 'rafael sousa';
 select count(id) from livro; 
 
 select * from livro
-order by titulo desc;
+order by titulo desc, preco desc;
