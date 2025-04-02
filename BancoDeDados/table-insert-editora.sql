@@ -11,3 +11,4 @@ VALUES
 ('companhia das letras', '20413077000109'),
 ('senac', '82535051000182'),
 ('biblioteca azul', '97045992000105');
+

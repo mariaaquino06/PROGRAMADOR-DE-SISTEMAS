@@ -1,9 +1,9 @@
 CREATE table IF NOT EXISTS testeAtividade 
 (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-cargo VARCHAR(100) NOT NULL,
+cargo VARCHAR(1000) NOT NULL,
 salario VARCHAR(50) NOT NULL,
-beneficios VARCHAR(50) NOT NULL,
+beneficios VARCHAR(1000) NOT NULL,
 localidade VARCHAR(50) NOT NULL
 );
 SELECT 
@@ -21,7 +21,7 @@ VALUES
 ('Secretária Executiva', 'R$2.109,00', 'Vale Transporte','São Paulo'),
 ('Advogado Jr.', 'R$5.000,00', 'VR,VT,Auxílio combustível,Cesta Básica','Santa Catarina'),
 ('Jovem aprendiz', 'R$1.000,02', 'VR,VT','Brasília'),
-('Dev Jr.', 'R$3.458,99', 'VR,VT,Seguro de vida,COnvênio','São Paulo'),
+('Dev Jr.', 'R$3.458,99', 'VR,VT,Seguro de vida,Convênio','São Paulo'),
 ('Estágio em Dados', 'R$2.110,00', 'VR,GymPass','Minas Gerais'),
 ('Auxiliar de Dentista', 'R$2.100,00', 'VR,VT,Seguro de vida,GymPass','Paraiba'),
 ('Analista Financeiro', 'R$7.500,00', 'VR,VT,GymPass','São Paulo'),
