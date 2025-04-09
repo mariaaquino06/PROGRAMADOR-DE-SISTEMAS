@@ -12,12 +12,13 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\maria.eoaquino\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\maria.eoaquino\\.nuget\\packages",
+      "C:\\Users\\rcsva\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\rcsva\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
+      "CSWINRT_USE_WINDOWS_UI_XAML_PROJECTIONS": false,
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
     }
   }

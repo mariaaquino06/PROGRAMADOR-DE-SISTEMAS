@@ -1,17 +1,18 @@
+using MySql.Data.MySqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Text.RegularExpressions;
 
 namespace FORMS2
 {
     public partial class Form1 : Form
-    {
+    {   
+        MySqlConnection Connnection;
+
         List<Usuario> usuarios = new List<Usuario>();
         public Form1()
         {
             InitializeComponent();
-            usuarios.Add(new Usuario() { text = "neymar.jr@email.com", Senha = "Brun@123" });
-            usuarios.Add(new Usuario() { Email = "pablo.vitar@email.com", Senha = "12345Abc!" });
-            usuarios.Add(new Usuario() { Email = "sukuna.silva@email.com", Senha = "Sete7Sete!" });
+           
         }
         private void ButtonEntrar_Click(object sender, EventArgs e)
         {

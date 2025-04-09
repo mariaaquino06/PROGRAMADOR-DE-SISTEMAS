@@ -1,3 +1,4 @@
 CREATE TABLE IF NOT EXISTS genero (
-id int primary key auto_increment,
-nome VARCHAR (100))
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL
+);
