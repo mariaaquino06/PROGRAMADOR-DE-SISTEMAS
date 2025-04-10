@@ -31,6 +31,51 @@ namespace FORMS2
                 labelResultado.ForeColor = Color.Red;
                 return;
             }
+
+            // Verifica se o usuário e senha estão corretos
+            // Inicializa a variável autenticado como false
+            bool autenticado = false;
+
+            try
+            {
+                Connection.Open();
+
+                string query = $"SELECT senha FROM usuario WHERE email = '{usuarioBuscado}';";
+
+                MySqlCommand mySqlCommand = new MySqlCommand(query, Connection);
+                MySqlDataReader reader = mySqlCommand.ExecuteReader();
+
+                autenticado = reader.Read() && reader.GetString(0) == senha;
+            }
+            catch
+            {
+                MessageBox.Show("Erro de banco de dados");
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            // Verifica se o usuário e senha não foram encontrados
+            if (!autenticado)
+            {
+                // Exibe mensagem de erro
+                labelResultado.Text = "Usuario ou Senha incorretos...";
+                // Muda a cor da mensagem para vermelho
+                labelResultado.ForeColor = Color.Red;
+                // Encerra a execução do método
+                return;
+            }
+
+            // Se o usuário e senha foram encontrados, exibe mensagem de sucesso
+            labelResultado.Text = "Autenticado com sucesso!";
+            // Muda a cor da mensagem para verde
+            labelResultado.ForeColor = Color.Green;
+
+            // Limpa os campos de texto
+            textBoxUsuario.Clear();
+            textBoxSenha.Clear();
+
             int posicaousuarioEncontrado = listaUsuarios.IndexOf(usuarioBuscado);
 
             

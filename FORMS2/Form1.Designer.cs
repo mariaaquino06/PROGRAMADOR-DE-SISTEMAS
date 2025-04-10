@@ -45,8 +45,10 @@
             // 
             // CaixaTextUsuario
             // 
+            CaixaTextUsuario.ForeColor = SystemColors.ActiveCaption;
             CaixaTextUsuario.Location = new Point(67, 39);
             CaixaTextUsuario.Name = "CaixaTextUsuario";
+            CaixaTextUsuario.ScrollBars = ScrollBars.Both;
             CaixaTextUsuario.Size = new Size(182, 23);
             CaixaTextUsuario.TabIndex = 0;
             // 
