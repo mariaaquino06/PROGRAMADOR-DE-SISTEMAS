@@ -78,7 +78,7 @@
             // 
             labelCadastrese.AutoSize = true;
             labelCadastrese.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelCadastrese.Location = new Point(104, 35);
+            labelCadastrese.Location = new Point(116, 32);
             labelCadastrese.Name = "labelCadastrese";
             labelCadastrese.Size = new Size(139, 40);
             labelCadastrese.TabIndex = 0;

@@ -10,7 +10,7 @@ namespace CadastroCliente
     {
         public int id { get; set; }
         public string Nome { get; set; }
-        public string datNasc { get; set; }
+        public DateTime datNasc { get; set; }
         public string telefone { get; set; }
         public string email { get; set; }
         public EnderecoCliente endereco { get; set; }
